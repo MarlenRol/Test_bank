@@ -1,0 +1,8 @@
+{
+    "scripts": {
+        "allure:generate": "allure generate allure-results -o allure-report --clean",
+        "allure:open": "allure open allure-report",
+        "allure:serve": "npm run allure:generate && npm run allure:open",
+        "allure:alternative": "allure generate allure-results -o allure-report --clean && npx http-server allure-report -p 8080 -o"
+    }
+}
