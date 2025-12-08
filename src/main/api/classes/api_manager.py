@@ -13,5 +13,5 @@ class ApiManager:
         self.user_steps = UserSteps(created_obj)
         self.deposit_steps = DepositSteps(created_obj)
         self.transfer_steps = TransferSteps(created_obj)
-        self.credit = CreditSteps(created_obj)
+        self.credit_steps = CreditSteps(created_obj)
         

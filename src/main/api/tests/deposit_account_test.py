@@ -13,7 +13,7 @@ from src.main.api.modules.create_user_request import CreateUserRequest
 class TestDepositAccount:    
     admin:str = "admin"
     password_admin:str ="123456"
-    user_name:str = "Max13"
+    user_name:str = "Max16"
     password_user:str = "Pas!sw0rd"
 
     @staticmethod

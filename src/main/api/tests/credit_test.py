@@ -15,7 +15,7 @@ class TestCredit:
       assert response.balance == 0
 
       request_credit_request = RequestCreditRequest(accountId=response.id,amount=5000,termMonths=12)
-      request_credit_response:RequestCreditResponse = api_manager.credit.credit_request(create_user_request,request_credit_request)
+      request_credit_response:RequestCreditResponse = api_manager.credit_steps.credit_request(create_user_request,request_credit_request)
       assert request_credit_response.id == request_credit_request.accountId and request_credit_response.amount == request_credit_request.amount and request_credit_request.termMonths == request_credit_response.termMonths
 
     def test_credit_repay(self, api_manager:ApiManager, create_user_request:CreateUserRequest):
@@ -24,11 +24,11 @@ class TestCredit:
       assert response.balance == 0
 
       request_credit_request = RequestCreditRequest(accountId=response.id,amount=5000,termMonths=12)
-      request_credit_response:RequestCreditResponse = api_manager.credit.credit_request(create_user_request,request_credit_request)
+      request_credit_response:RequestCreditResponse = api_manager.credit_steps.credit_request(create_user_request,request_credit_request)
       assert request_credit_response.id == request_credit_request.accountId and request_credit_response.amount == request_credit_request.amount and request_credit_request.termMonths == request_credit_response.termMonths
 
       repay_credit_request = RepayCreditRequest(creditId=request_credit_response.creditId,accountId=request_credit_response.id,amount=5000)
-      repay_credit_response:RepayCreditResponse = api_manager.credit.credit_repay(create_user_request, repay_credit_request)
+      repay_credit_response:RepayCreditResponse = api_manager.credit_steps.credit_repay(create_user_request, repay_credit_request)
       assert repay_credit_response.creditId == repay_credit_request.creditId and repay_credit_response.amountDeposited == request_credit_request.amount
 
 
