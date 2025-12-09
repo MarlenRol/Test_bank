@@ -4,5 +4,5 @@ from src.main.api.modules.base_module import BaseModel
 
 
 class DepositAccountRequest(BaseModel):
-    accountId:int
-    amount:Annotated[float, CreationRule(regex=r'^((1000|[1-4][0-9]{3}|9000)(\.\d{2})?)$')]
+    accountId:Annotated[int,CreationRule(regex=r'^1')] 
+    amount:Annotated[float, CreationRule(regex=r'^((?:1000|[1-8][0-9]{3})(?:\.[0-9]{2})?|9000(?:\.00)?)$')]
