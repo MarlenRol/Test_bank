@@ -1,5 +1,7 @@
 from typing import Any, List
 
+from src.main.api.steps.get_history_credit_steps import GetHistoryCreditSteps
+from src.main.api.steps.get_transactions_steps import GetTransactionsSteps
 from src.main.api.steps.credit_steps import CreditSteps
 from src.main.api.steps.transefer_steps import TransferSteps
 from src.main.api.steps.deposit_steps import DepositSteps
@@ -14,4 +16,5 @@ class ApiManager:
         self.deposit_steps = DepositSteps(created_obj)
         self.transfer_steps = TransferSteps(created_obj)
         self.credit_steps = CreditSteps(created_obj)
-        
+        self.get_transactions_steps = GetTransactionsSteps(created_obj)
+        self.get_history_credit_steps = GetHistoryCreditSteps(created_obj)

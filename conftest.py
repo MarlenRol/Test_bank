@@ -5,3 +5,5 @@ from src.main.api.fixtures.user_fixture import *
 from src.main.api.fixtures.deposit_fixture import *
 from src.main.api.fixtures.transfer_fixture import *
 from src.main.api.fixtures.credit_fixture import *
+from src.main.api.fixtures.get_transactions_fixture import *
+from src.main.api.fixtures.get_history_credit_fixture import *  

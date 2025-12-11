@@ -1,6 +1,9 @@
 from dataclasses import dataclass
 from enum import Enum
 from typing import Type, Optional
+from src.main.api.modules.get_history_credit_response import GetHistoryCreditResponse
+from src.main.api.modules.get_account_transactions_response import GetAccountTransactionsResponse
+from src.main.api.modules.get_admin_users_response import GetAdminUsersResponse
 from src.main.api.modules.repay_credit_request import RepayCreditRequest
 from src.main.api.modules.repay_credit_response import RepayCreditResponse
 from src.main.api.modules.request_credit_request import RequestCreditRequest
@@ -29,11 +32,18 @@ class Endpoint(Enum):
         response_model=CreateUserResponse
     )
 
+    ADMIN_GET_USERS = EndpointConfiguration(
+        request_model=None,
+        url = "/admin/users",
+        response_model=GetAdminUsersResponse
+    )
+
     ADMIN_DELETE_USER = EndpointConfiguration(
         request_model = None,
         url="/admin/users",
         response_model= None
     )
+
 
     LOGIN_USER = EndpointConfiguration(
         request_model=LoginUserRequest,
@@ -58,6 +68,12 @@ class Endpoint(Enum):
         response_model=TransferAccountResponse
     )
 
+    TRANSACTIONS_GET_ACCOUNT = EndpointConfiguration(
+        request_model=None,
+        url="/account/transactions",
+        response_model=GetAccountTransactionsResponse
+    )
+
     REQUEST_CREDIT = EndpointConfiguration(
         request_model=RequestCreditRequest,
         url="/credit/request",
@@ -68,5 +84,11 @@ class Endpoint(Enum):
         request_model=RepayCreditRequest,
         url="/credit/repay",
         response_model=RepayCreditResponse
+    )
+
+    HISTORY_CREDIT = EndpointConfiguration(
+        request_model=None,
+        url="/credit/history",
+        response_model=GetHistoryCreditResponse
     )
 

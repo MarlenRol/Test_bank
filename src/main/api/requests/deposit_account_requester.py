@@ -4,13 +4,13 @@ from src.main.api.modules.deposit_account_response import DepositAccountResponse
 from src.main.api.requests.requester import Requester
 
 
-class DepositAccountRequester(Requester):
-    def post(self, deposit_account_request:DepositAccountRequest)->DepositAccountResponse:
-        url = f"{self.base_url}/account/deposit"
-        response = requests.post(
-            url=url,
-            json=deposit_account_request.model_dump(),
-            headers=self.headers
-        )
-        self.response_spec(response)
-        return DepositAccountResponse(**response.json())
+# class DepositAccountRequester(Requester):
+#     def post(self, deposit_account_request:DepositAccountRequest)->DepositAccountResponse:
+#         url = f"{self.base_url}/account/deposit"
+#         response = requests.post(
+#             url=url,
+#             json=deposit_account_request.model_dump(),
+#             headers=self.headers
+#         )
+#         self.response_spec(response)
+#         return DepositAccountResponse(**response.json())

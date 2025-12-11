@@ -4,13 +4,13 @@ from src.main.api.modules.repay_credit_request import RepayCreditRequest
 from src.main.api.requests.requester import Requester
 
 
-class RepayCreditRequester(Requester):
-    def post(self, repay_credit_request:RepayCreditRequest)->RepayCreditResponse:
-        url = f"{self.base_url}/credit/repay"
-        response = requests.post(
-            url=url,
-            json=repay_credit_request.model_dump(),
-            headers=self.headers
-        )
-        self.response_spec(response)
-        return RepayCreditResponse(**response.json())
+# class RepayCreditRequester(Requester):
+#     def post(self, repay_credit_request:RepayCreditRequest)->RepayCreditResponse:
+#         url = f"{self.base_url}/credit/repay"
+#         response = requests.post(
+#             url=url,
+#             json=repay_credit_request.model_dump(),
+#             headers=self.headers
+#         )
+#         self.response_spec(response)
+#         return RepayCreditResponse(**response.json())
